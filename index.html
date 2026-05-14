@@ -63,7 +63,9 @@
     </section>
 
     <section class="stats">
-        <div class="container stats__inner">
+        <div class="container">
+            <h2 class="visually-hidden">Статистика учебного центра</h2>
+            <div class="stats__inner">
             <div class="stat">
                 <span class="stat__num">4000+</span>
                 <span class="stat__text">Довольных клиентов</span>
@@ -80,6 +82,7 @@
                 <span class="stat__num">5500+</span>
                 <span class="stat__text">Студентов и клиник</span>
             </div>
+        </div>
         </div>
     </section>
 
@@ -330,6 +333,6 @@
         </div>
     </footer>
 
+    <script>document.querySelector('.nav')?.addEventListener('click', function(){this.classList.remove('nav--open')});</script>
 </body>
-<script>document.querySelector('.nav')?.addEventListener('click', function(){this.classList.remove('nav--open')});</script>
 </html>
