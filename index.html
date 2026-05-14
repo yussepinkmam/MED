@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALMADI — Учебный центр эстетической косметологии</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__top">
+            <div class="container header__top-inner">
+                <a href="#" class="logo">VALMADI</a>
+                <nav class="nav">
+                    <a href="courses.html" class="nav__link">Курсы обучения</a>
+                    <a href="webinars.html" class="nav__link">Вебинары</a>
+                    <a href="#" class="nav__link">Видео-уроки</a>
+                    <a href="blog.html" class="nav__link">Блог</a>
+                    <a href="about.html" class="nav__link">О нас</a>
+                    <a href="#" class="nav__link">Приём</a>
+                    <a href="#" class="nav__link">Расписание</a>
+                    <a href="#" class="nav__link">Акции</a>
+                    <a href="price.html" class="nav__link">Магазин</a>
+                </nav>
+                <button class="hamburger" onclick="document.querySelector('.nav').classList.toggle('nav--open')">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="header__contacts">
+                    <a href="tel:+78005080622" class="header__phone">8 (800) 508-622</a>
+                    <div class="header__social">
+                        <a href="#" title="VK">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14C20.67 22 22 20.67 22 15.07V8.93C22 3.33 20.67 2 15.07 2zm3.08 13.5h-1.6c-.6 0-.79-.48-1.87-1.57-.94-.93-1.35-.93-1.35 0v1.28c0 .43-.14.57-1.28.57-1.9 0-4-.11-5.47-1.65C5.2 12.48 4.5 10.5 4.5 10.5s-.07-.17.07-.26l1.6-.01c.43 0 .6.2.76.64.84 2.42 2.24 4.54 2.81 4.54.22 0 .32-.1.32-.65V12.5c-.07-1.17-.68-1.27-.68-1.69 0-.22.18-.44.47-.44h2.52c.36 0 .48.19.48.6v3.22c0 .36.16.48.26.48.22 0 .4-.12.8-.53 1.24-1.39 2.12-3.52 2.12-3.52.12-.26.32-.5.75-.5h1.6c.48 0 .59.25.48.59-.2.93-2.16 3.7-2.16 3.7-.17.28-.24.4 0 .71.17.24.74.74 1.12 1.18.69.79 1.22 1.45 1.36 1.91.14.45-.09.68-.54.68z"/></svg>
+                        </a>
+                        <a href="#" title="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                    </div>
+                    <div class="header__lang">RU</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero__inner">
+            <div class="hero__content">
+                <p class="hero__label">Бесплатный вебинар</p>
+                <h1 class="hero__title">ПРОФЕССИЯ КОСМЕТОЛОГ</h1>
+                <p class="hero__subtitle">Подготовьтесь к будущей профессии прямо из дома. Задайте вопросы практикующим специалистам и интересующие вас профессиональные вопросы.</p>
+                <div class="hero__buttons">
+                    <a href="#" class="btn btn--green">Зарегистрироваться</a>
+                    <a href="#" class="btn btn--outline">Подробнее</a>
+                </div>
+            </div>
+            <div class="hero__image">
+                <img src="images/hero-doctors.png" alt="Косметологи">
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container stats__inner">
+            <div class="stat">
+                <span class="stat__num">4000+</span>
+                <span class="stat__text">Довольных клиентов</span>
+            </div>
+            <div class="stat">
+                <span class="stat__num">3500+</span>
+                <span class="stat__text">Часов в учебе базе</span>
+            </div>
+            <div class="stat">
+                <span class="stat__num">1500+</span>
+                <span class="stat__text">Отзывов об обучении</span>
+            </div>
+            <div class="stat">
+                <span class="stat__num">5500+</span>
+                <span class="stat__text">Студентов и клиник</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="courses">
+        <div class="container">
+            <h2 class="section-title">Курсы обучения</h2>
+            <div class="courses__grid">
+                <div class="course-card">
+                    <div class="course-card__image">
+                        <img src="images/course-1.jpg" alt="Косметические техники">
+                    </div>
+                    <div class="course-card__body">
+                        <span class="course-card__badge">Курс для новичков</span>
+                        <h3 class="course-card__title">Косметические техники</h3>
+                        <p class="course-card__duration">6 - 8 часов</p>
+                        <p class="course-card__price">от ... грн</p>
+                        <div class="course-card__buttons">
+                            <a href="#" class="btn btn--green btn--sm">Зарегистрироваться</a>
+                            <a href="#" class="btn btn--outline btn--sm">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-card__image">
+                        <img src="images/course-2.jpg" alt="Мезотерапия и биоревитализация">
+                    </div>
+                    <div class="course-card__body">
+                        <span class="course-card__badge">Курс для новичков</span>
+                        <h3 class="course-card__title">Мезотерапия и биоревитализация</h3>
+                        <p class="course-card__duration">16 - 20 часов</p>
+                        <p class="course-card__price">от ... грн</p>
+                        <div class="course-card__buttons">
+                            <a href="#" class="btn btn--green btn--sm">Зарегистрироваться</a>
+                            <a href="#" class="btn btn--outline btn--sm">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-card__image">
+                        <img src="images/course-3.jpg" alt="Нитевой лифтинг">
+                    </div>
+                    <div class="course-card__body">
+                        <span class="course-card__badge">2 курса</span>
+                        <h3 class="course-card__title">Нитевой лифтинг — APTOS в косметологии</h3>
+                        <p class="course-card__duration">8 - 12 часов</p>
+                        <p class="course-card__price">от ... грн</p>
+                        <div class="course-card__buttons">
+                            <a href="#" class="btn btn--green btn--sm">Зарегистрироваться</a>
+                            <a href="#" class="btn btn--outline btn--sm">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container about__inner">
+            <div class="about__image">
+                <img src="images/about-procedure.jpg" alt="Процедура">
+            </div>
+            <div class="about__content">
+                <p class="about__brand">VALMADI</p>
+                <h2 class="about__title">ВЕДУЩИЙ УЧЕБНЫЙ ЦЕНТР ЭСТЕТИЧЕСКОЙ КОСМЕТОЛОГИИ</h2>
+                <p class="about__text">Обязанность может быть любой. Ведущий учебный центр эстетической косметологии. Более 5 лет мы проводим курсы сертификационные курсы профессионального обучения и повышения квалификации, курсы эстетической медицины, педиатрии и молодости.</p>
+                <a href="#" class="btn btn--green">Подробнее</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="education">
+        <div class="container">
+            <h2 class="section-title">Обучение косметологов</h2>
+            <div class="education__grid">
+                <a href="#" class="edu-card edu-card--wide">
+                    <img src="images/edu-courses.jpg" alt="Курсы косметологии">
+                    <div class="edu-card__label">КУРСЫ КОСМЕТОЛОГИИ</div>
+                </a>
+                <a href="#" class="edu-card">
+                    <img src="images/edu-online.jpg" alt="Онлайн обучение">
+                    <div class="edu-card__label">ОНЛАЙН ОБУЧЕНИЕ</div>
+                </a>
+                <a href="#" class="edu-card">
+                    <img src="images/edu-schedule.jpg" alt="Расписание">
+                    <div class="edu-card__label">РАСПИСАНИЕ</div>
+                </a>
+                <a href="#" class="edu-card">
+                    <img src="images/edu-masterclass.jpg" alt="Мастер-классы">
+                    <div class="edu-card__label">МАСТЕР-КЛАССЫ</div>
+                </a>
+                <a href="#" class="edu-card">
+                    <img src="images/edu-actions.jpg" alt="Акции">
+                    <div class="edu-card__label">АКЦИИ</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="models">
+        <div class="container models__inner">
+            <div class="models__content">
+                <h2 class="models__title">ВЕДЕМ НАБОР МОДЕЛЕЙ</h2>
+                <p class="models__text">Мы предлагаем свои услуги для моделей. Выберите процедуру или несколько процедур и наш косметолог произведет все необходимые манипуляции, которые позволят вам получить эту процедуру.</p>
+                <a href="#" class="btn btn--green">Стать моделью</a>
+            </div>
+            <div class="models__image">
+                <img src="images/models-procedure.jpg" alt="Модель на процедуре">
+            </div>
+        </div>
+    </section>
+
+    <section class="masterclass">
+        <div class="container">
+            <h2 class="section-title">Мастер-классы</h2>
+            <p class="section-subtitle">Мероприятия для повышения квалификации косметологов</p>
+            <div class="masterclass__grid">
+                <div class="mc-card">
+                    <div class="mc-card__image">
+                        <img src="images/mc-1.jpg" alt="Мастер-класс 1">
+                    </div>
+                    <div class="mc-card__body">
+                        <p class="mc-card__date">12 мая, пятница</p>
+                        <h3 class="mc-card__title">Базовая косметология. Базовая косметология, удаление папиллом.</h3>
+                        <p class="mc-card__price">3000 грн</p>
+                        <a href="#" class="btn btn--green btn--sm">→</a>
+                    </div>
+                </div>
+                <div class="mc-card">
+                    <div class="mc-card__image">
+                        <img src="images/mc-2.jpg" alt="Мастер-класс 2">
+                    </div>
+                    <div class="mc-card__body">
+                        <p class="mc-card__date">18 мая, четверг</p>
+                        <h3 class="mc-card__title">Контурная пластика лица — инъекции филлеров</h3>
+                        <p class="mc-card__price">4500 грн</p>
+                        <a href="#" class="btn btn--green btn--sm">→</a>
+                    </div>
+                </div>
+                <div class="mc-card">
+                    <div class="mc-card__image">
+                        <img src="images/mc-3.jpg" alt="Мастер-класс 3">
+                    </div>
+                    <div class="mc-card__body">
+                        <p class="mc-card__date">25 мая, пятница</p>
+                        <h3 class="mc-card__title">Вискосил, нитевой лифтинг</h3>
+                        <p class="mc-card__price">Бесплатно</p>
+                        <a href="#" class="btn btn--green btn--sm">→</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why">
+        <div class="container">
+            <h2 class="section-title">Почему мы</h2>
+            <div class="why__grid">
+                <div class="why-card">
+                    <div class="why-card__icon">🎓</div>
+                    <h3 class="why-card__title">Преподаватели</h3>
+                    <p class="why-card__text">Наши специалисты — практикующие косметологи с более чем 10-летним опытом работы.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card__icon">📜</div>
+                    <h3 class="why-card__title">Сертификаты</h3>
+                    <p class="why-card__text">По окончании курса каждый студент получает официальный сертификат о повышении квалификации.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card__icon">⭐</div>
+                    <h3 class="why-card__title">Повышение квалификации</h3>
+                    <p class="why-card__text">Ежеквартально более 500 специалистов повышают квалификацию в нашем центре.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="special">
+        <div class="container">
+            <h2 class="section-title">Специальные предложения</h2>
+            <div class="special__slider">
+                <button class="slider-btn slider-btn--prev">&#8249;</button>
+                <div class="special__track">
+                    <div class="special-card">
+                        <div class="special-card__badge special-card__badge--purple">АКЦИЯ!<br><span>-15%</span><br>от 3 услуги</div>
+                        <img src="images/special-1.jpg" alt="Акция 1">
+                    </div>
+                    <div class="special-card">
+                        <div class="special-card__badge special-card__badge--green">-10%<br>от 2 услуги<br>-15%<br>от 3 услуги</div>
+                        <img src="images/special-2.jpg" alt="Акция 2">
+                    </div>
+                    <div class="special-card">
+                        <div class="special-card__badge special-card__badge--blue">АКЦИЯ МЕСЯЦА!<br><span>-25%</span></div>
+                        <img src="images/special-3.jpg" alt="Акция 3">
+                    </div>
+                </div>
+                <button class="slider-btn slider-btn--next">&#8250;</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="callback">
+        <div class="container callback__inner">
+            <h2 class="callback__title">Закажите обратный звонок</h2>
+            <p class="callback__subtitle">Оставьте заявку и форму ниже и менеджер свяжется с вами</p>
+            <div class="callback__form">
+                <input type="text" class="callback__input" placeholder="Имя">
+                <input type="tel" class="callback__input" placeholder="Телефон">
+                <input type="email" class="callback__input" placeholder="Email">
+                <button class="btn btn--green">Отправить</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__map">
+            <img src="images/map.jpg" alt="Карта">
+        </div>
+        <div class="footer__info">
+            <div class="container footer__inner">
+                <div class="footer__contacts">
+                    <p class="footer__phone">0 (800) 508-622</p>
+                    <p class="footer__address">Харьков, Клочковская, д. 3</p>
+                    <div class="footer__social">
+                        <a href="#" title="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" title="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__col">
+                        <a href="#">Курсы обучения</a>
+                        <a href="#">Расписание</a>
+                        <a href="blog.html">Блог</a>
+                        <a href="#">Акции</a>
+                        <a href="#">Мастер-классы</a>
+                        <a href="#">Мобиле</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>Все права сохранены</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script>document.querySelector('.nav')?.addEventListener('click', function(){this.classList.remove('nav--open')});</script>
+</html>
