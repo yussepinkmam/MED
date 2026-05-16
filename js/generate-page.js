@@ -156,32 +156,86 @@ $(function() {
   // Обработчик навигации
   document.querySelector('.nav')?.addEventListener('click', function(){this.classList.remove('nav--open')});
 
-  // Инициализация плагинов jQuery
-  // Валидация формы
-  $('.callback__form').validate({
-    rules: {
-      name: "required",
-      phone: "required",
-      email: { required: true, email: true }
-    },
-    messages: {
-      name: "Введите имя",
-      phone: "Введите телефон",
-      email: { required: "Введите email", email: "Неверный формат email" }
-    },
-    submitHandler: function(form) {
-      alert('Форма отправлена!');
-    }
+  // 1. Анимация при скролле (AOS)
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true,
+    offset: 100
   });
 
-  // Ленивая загрузка изображений
+  // Добавляем атрибуты aos к секциям
+  $('section').each(function(i) {
+    var dir = i % 2 === 0 ? 'fade-up' : 'fade-right';
+    $(this).attr('data-aos', dir);
+  });
+
+  // 2. Маска для ввода телефона
+  $('input[type="tel"]').inputmask('+7 (999) 999-99-99', { placeholder: '+7 (___) ___ __-__' });
+
+  // 3. Модальное окно для кнопок "Подробнее"
+  $('body').append(
+    '<div class="modal-overlay" id="modal">' +
+      '<div class="modal">' +
+        '<button class="modal__close">&times;</button>' +
+        '<h2 class="modal__title">Информация о курсе</h2>' +
+        '<p class="modal__text">Подробное описание курса будет доступно после регистрации. Оставьте заявку и наш менеджер свяжется с вами.</p>' +
+        '<div class="modal__form">' +
+          '<input type="text" class="callback__input" placeholder="Имя">' +
+          '<input type="tel" class="callback__input" placeholder="Телефон">' +
+          '<button class="btn btn--green modal__btn">Отправить заявку</button>' +
+        '</div>' +
+      '</div>' +
+    '</div>'
+  );
+
+  $('[class*="btn--outline"]').on('click', function(e) {
+    e.preventDefault();
+    $('#modal').fadeIn(300);
+    $('#modal input[type="tel"]').inputmask('+7 (999) 999-99-99');
+  });
+
+  $('.modal__close, .modal-overlay').on('click', function(e) {
+    if (e.target === this) $('#modal').fadeOut(200);
+  });
+
+  $(document).on('keydown', function(e) {
+    if (e.key === 'Escape') $('#modal').fadeOut(200);
+  });
+
+  // 4. Ленивая загрузка изображений
   $("img").lazyload({ threshold: 200 });
 
-  // Таймер обратного отсчёта для акций
-  if ($('.countdown').length) {
-    $('.countdown').countdown('2026/06/01', function(event) {
-      $(this).html(event.strftime('%D дней %H:%M:%S'));
+  // 5. Таймер обратного отсчёта для акций
+  $('.special-card').each(function() {
+    var $card = $(this);
+    var days = Math.floor(Math.random() * 14) + 7;
+    var now = new Date();
+    now.setDate(now.getDate() + days);
+    $card.append('<div class="countdown" data-date="' + now.toISOString() + '"></div>');
+  });
+
+  $('.countdown').each(function() {
+    var date = $(this).data('date');
+    $(this).countdown(date, function(event) {
+      $(this).html(event.strftime('%D:%H:%M:%S'));
     });
-  }
+  });
+
+  // 6. Добавляем стили для модального окна
+  $('head').append(
+    '<style>' +
+    '.modal-overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.6); z-index:1000; justify-content:center; align-items:center; }' +
+    '.modal { background:#fff; padding:40px; border-radius:12px; max-width:500px; width:90%; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.3); }' +
+    '.modal__close { position:absolute; top:12px; right:16px; font-size:1.8rem; border:none; background:none; cursor:pointer; color:#999; }' +
+    '.modal__close:hover { color:#333; }' +
+    '.modal__title { font-family:"Playfair Display",serif; font-size:1.4rem; color:#1a1a2e; margin-bottom:12px; }' +
+    '.modal__text { font-size:0.9rem; color:#666; margin-bottom:20px; line-height:1.6; }' +
+    '.modal__form { display:flex; flex-direction:column; gap:12px; }' +
+    '.modal__btn { width:100%; }' +
+    'section[data-aos] { transition: all 0.8s ease; }' +
+    '.countdown { position:absolute; bottom:12px; right:12px; background:rgba(0,0,0,0.7); color:#fff; padding:4px 10px; border-radius:4px; font-size:0.8rem; font-weight:700; letter-spacing:1px; }' +
+    '</style>'
+  );
 
 });
