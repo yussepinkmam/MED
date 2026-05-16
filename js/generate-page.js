@@ -150,30 +150,39 @@ $(function() {
   fn.append(fcol); fii.append(fn); fi.append(fii); footer.append(fi);
   const fb = el("div","footer__bottom"); const fbc = el("div","container"); fbc.append(el("p","","Все права сохранены")); fb.append(fbc); footer.append(fb);
 
+  // Сначала добавляем CSS для модального окна и AOS в head
+  $('head').append(
+    '<style>' +
+    '.modal-overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.6); z-index:1000; justify-content:center; align-items:center; }' +
+    '.modal { background:#fff; padding:40px; border-radius:12px; max-width:500px; width:90%; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.3); }' +
+    '.modal__close { position:absolute; top:12px; right:16px; font-size:1.8rem; border:none; background:none; cursor:pointer; color:#999; }' +
+    '.modal__close:hover { color:#333; }' +
+    '.modal__title { font-family:"Playfair Display",serif; font-size:1.4rem; color:#1a1a2e; margin-bottom:12px; }' +
+    '.modal__text { font-size:0.9rem; color:#666; margin-bottom:20px; line-height:1.6; }' +
+    '.modal__form { display:flex; flex-direction:column; gap:12px; }' +
+    '.modal__btn { width:100%; }' +
+    '</style>'
+  );
+
   // Сборка
   document.body.append(header, hero, stats, courses, about, edu, models, mc, why, special, cb, footer);
+
+  // Добавляем data-aos атрибуты ДО AOS.init()
+  var aosDirs = ['fade-up', 'fade-right', 'fade-left', 'zoom-in', 'flip-up', 'fade-down', 'fade-up', 'fade-right', 'fade-left', 'zoom-in', 'flip-up', 'fade-down'];
+  $('section').each(function(i) {
+    $(this).attr('data-aos', aosDirs[i % aosDirs.length]);
+  });
+
+  // Инициализация AOS
+  AOS.init({ duration: 800, easing: 'ease-in-out', once: true, offset: 80 });
 
   // Обработчик навигации
   document.querySelector('.nav')?.addEventListener('click', function(){this.classList.remove('nav--open')});
 
-  // 1. Анимация при скролле (AOS)
-  AOS.init({
-    duration: 800,
-    easing: 'ease-in-out',
-    once: true,
-    offset: 100
-  });
-
-  // Добавляем атрибуты aos к секциям
-  $('section').each(function(i) {
-    var dir = i % 2 === 0 ? 'fade-up' : 'fade-right';
-    $(this).attr('data-aos', dir);
-  });
-
-  // 2. Маска для ввода телефона
+  // Маска для телефона
   $('input[type="tel"]').inputmask('+7 (999) 999-99-99', { placeholder: '+7 (___) ___ __-__' });
 
-  // 3. Модальное окно для кнопок "Подробнее"
+  // Модальное окно
   $('body').append(
     '<div class="modal-overlay" id="modal">' +
       '<div class="modal">' +
@@ -202,20 +211,5 @@ $(function() {
   $(document).on('keydown', function(e) {
     if (e.key === 'Escape') $('#modal').fadeOut(200);
   });
-
-  // 4. Добавляем стили для модального окна
-  $('head').append(
-    '<style>' +
-    '.modal-overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.6); z-index:1000; justify-content:center; align-items:center; }' +
-    '.modal { background:#fff; padding:40px; border-radius:12px; max-width:500px; width:90%; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.3); }' +
-    '.modal__close { position:absolute; top:12px; right:16px; font-size:1.8rem; border:none; background:none; cursor:pointer; color:#999; }' +
-    '.modal__close:hover { color:#333; }' +
-    '.modal__title { font-family:"Playfair Display",serif; font-size:1.4rem; color:#1a1a2e; margin-bottom:12px; }' +
-    '.modal__text { font-size:0.9rem; color:#666; margin-bottom:20px; line-height:1.6; }' +
-    '.modal__form { display:flex; flex-direction:column; gap:12px; }' +
-    '.modal__btn { width:100%; }' +
-    'section[data-aos] { transition: all 0.8s ease; }' +
-    '</style>'
-  );
 
 });
