@@ -203,26 +203,7 @@ $(function() {
     if (e.key === 'Escape') $('#modal').fadeOut(200);
   });
 
-  // 4. Ленивая загрузка изображений
-  $("img").lazyload({ threshold: 200 });
-
-  // 5. Таймер обратного отсчёта для акций
-  $('.special-card').each(function() {
-    var $card = $(this);
-    var days = Math.floor(Math.random() * 14) + 7;
-    var now = new Date();
-    now.setDate(now.getDate() + days);
-    $card.append('<div class="countdown" data-date="' + now.toISOString() + '"></div>');
-  });
-
-  $('.countdown').each(function() {
-    var date = $(this).data('date');
-    $(this).countdown(date, function(event) {
-      $(this).html(event.strftime('%D:%H:%M:%S'));
-    });
-  });
-
-  // 6. Добавляем стили для модального окна
+  // 4. Добавляем стили для модального окна
   $('head').append(
     '<style>' +
     '.modal-overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.6); z-index:1000; justify-content:center; align-items:center; }' +
@@ -234,7 +215,6 @@ $(function() {
     '.modal__form { display:flex; flex-direction:column; gap:12px; }' +
     '.modal__btn { width:100%; }' +
     'section[data-aos] { transition: all 0.8s ease; }' +
-    '.countdown { position:absolute; bottom:12px; right:12px; background:rgba(0,0,0,0.7); color:#fff; padding:4px 10px; border-radius:4px; font-size:0.8rem; font-weight:700; letter-spacing:1px; }' +
     '</style>'
   );
 
